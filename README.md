@@ -22,10 +22,19 @@
 
 ```html
 <!-- 1) Add a theme -->
-<link rel="stylesheet" href="themes/vs-code-dark.css" />
+<!-- CodeDye Theme (Dark) -->
+<link rel="stylesheet" id="themeStylesheet" href="https://cdn.jsdelivr.net/gh/Tezumie/codedye@main/dist/themes/vs-code-dark.css" />
+<!-- Optional: Light Theme -->
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Tezumie/codedye@main/dist/themes/vs-code-light.css" /> -->
+
 
 <!-- 2) Load CodeDye UMD bundle -->
-<script src="builds/codedye.all.umd.js"></script>
+<!-- CodeDye Script -->
+<script src="https://cdn.jsdelivr.net/gh/Tezumie/codedye@main/dist/builds/codedye.all.umd.js"></script>
+
+<!-- Optional: Specific languages -->
+<script src="https://cdn.jsdelivr.net/gh/Tezumie/codedye@main/dist/builds/codedye.js.umd.js"></script>
+
 ```
 
 > Or load individual bundles per language (e.g. `codedye.css.umd.js`) to keep things lean.
