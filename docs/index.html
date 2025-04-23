@@ -730,14 +730,17 @@ That’s it — happy testing!
       const darkBtn = document.getElementById('darkModeBtn');
       const lightBtn = document.getElementById('lightModeBtn');
 
+      const CDN_BASE = "https://cdn.jsdelivr.net/gh/Tezumie/codedye@main/dist/themes/";
+
       darkBtn.addEventListener('click', () => {
-         themeLink.href = "../dist/themes/vs-code-dark.css";
+         themeLink.href = CDN_BASE + "vs-code-dark.css";
       });
 
       lightBtn.addEventListener('click', () => {
-         themeLink.href = "../dist/themes/vs-code-light.css";
+         themeLink.href = CDN_BASE + "vs-code-light.css";
       });
    </script>
+
 
 </body>
 
