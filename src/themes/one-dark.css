@@ -1,0 +1,305 @@
+/* ==========================================================================
+   Base Styles
+   ========================================================================== */
+pre {
+    margin: 0;
+    overflow: auto;
+    background: #282c34;
+    color: #abb2bf;
+    padding: 10px;
+    font-size: 14px;
+}
+
+code {
+    display: block;
+    white-space: pre;
+    height: 100%;
+}
+
+/* ==========================================================================
+   Token Styles — Core Language Elements
+   ========================================================================== */
+
+.keyword {
+    color: #c678dd;
+}
+
+.keyword\.flow {
+    color: #e06c75;
+}
+
+.keyword\.declaration {
+    color: #c678dd;
+}
+
+.identifier {
+    color: #abb2bf;
+}
+
+.objectName {
+    color: #e5c07b;
+}
+
+.functionName {
+    color: #61aeee;
+}
+
+.type,
+.type\.identifier {
+    color: #56b6c2;
+}
+
+.string {
+    color: #98c379;
+}
+
+.string\.escape {
+    color: #98c379;
+}
+
+.string\.escape\.invalid {
+    color: #f14c4c;
+}
+
+.number,
+.number\.float,
+.number\.hex,
+.number\.octal,
+.number\.binary {
+    color: #d19a55;
+}
+
+.regexp,
+.regexp\.escape,
+.regexp\.escape\.control {
+    color: #98c379;
+}
+
+.regexp\.escape\.other {
+    color: #61aeee;
+}
+
+.comment,
+.comment\.doc {
+    color: #7f848e;
+}
+
+.invalid {
+    color: #f14c4c;
+}
+
+.delimiter {
+    color: #56b6c2;
+}
+
+.delimiter\.bracket\.level1 {
+    color: #56b6b9;
+}
+
+.delimiter\.bracket\.level2 {
+    color: #d19a56;
+}
+
+.delimiter\.bracket\.level3 {
+    color: #c678dd;
+}
+
+.delimiter\.bracket\.level4 {
+    color: #43b6c2;
+}
+
+.delimiter\.bracket\.level5 {
+    color: #c678dd;
+}
+
+.delimiter\.bracket\.level6 {
+    color: #c79a66;
+}
+
+/* ==========================================================================
+   Token Styles — CSS-Specific Overrides
+   ========================================================================== */
+
+.css-keyword\.at-rule {
+    color: #c678dd;
+}
+
+.css-selector {
+    color: #e06c75;
+}
+
+.css-attribute\.name {
+    color: #98c379;
+}
+
+.css-number,
+.css-number\.hex {
+    color: #d19a55;
+}
+
+.css-identifier {
+    color: #abb2bf;
+}
+
+.css-function {
+    color: #abb2bf;
+}
+
+.css-delimiter\.parenthesis {
+    color: #abb2bf;
+}
+
+.css-keyword {
+    color: #c678dd;
+}
+
+.css-pseudoClass {
+    color: #c678dd !important;
+}
+
+.token.css-keyword.at-rule.keyframes,
+.token.keyword.at-rule.keyframes {
+    color: #61aeee;
+}
+
+/* ==========================================================================
+   Token Styles — HTML-Specific Overrides
+   ========================================================================== */
+
+.html-metatag\.content {
+    color: #c678dd;
+}
+
+.html-metatag,
+.html-tag {
+    color: #e06c75;
+}
+
+.html-attribute\.name {
+    color: #d19a55;
+}
+
+.html-attribute\.value {
+    color: #98c379;
+}
+
+.html-delimiter {
+    color: #abb2bf;
+}
+
+.html-comment,
+.html-comment\.content {
+    color: #7f848e;
+}
+
+/* ==========================================================================
+   Token Styles — Python-Specific Overrides
+   ========================================================================== */
+pre code[class*="language-py"] {
+    color: #abb2bf;
+}
+
+.py-keyword {
+    color: #c678dd;
+}
+
+.py-identifier {
+    color: #61aeee;
+}
+
+.py-comment {
+    color: #7f848e;
+}
+
+.py-string {
+    color: #98c379;
+}
+
+.py-string.escape {
+    color: #98c379;
+}
+
+.py-number {
+    color: #d19a55;
+}
+
+.py-tag {
+    color: #c678dd;
+}
+
+.py-delimiter {
+    color: #56b6c2;
+}
+
+.py-delimiter.bracket,
+.py-delimiter.bracket.level1,
+.py-delimiter.bracket.level2,
+.py-delimiter.bracket.level3,
+.py-delimiter.bracket.level4,
+.py-delimiter.bracket.level5,
+.py-delimiter.bracket.level6 {
+    color: #56b6c2;
+}
+
+.py-invalid {
+    color: #f14c4c;
+}
+
+.py-keyword\.self {
+    color: #61aeee;
+}
+
+.py-constant\.language {
+    color: #c678dd;
+}
+
+.py-keyword\.flow {
+    color: #e06c75;
+}
+
+.py-keyword\.declaration {
+    color: #c678dd;
+}
+
+.py-keyword\.operator {
+    color: #abb2bf;
+}
+
+.py-type.identifier {
+    color: #56b6c2;
+}
+
+.py-functionName {
+    color: #61aeee;
+}
+
+/* ==========================================================================
+   Token Styles — Markdown Inline HTML Syntax
+   ========================================================================== */
+
+.tag.md-tag,
+.delimiter.md-delimiter {
+    color: #e06c75;
+}
+
+.attribute\.name.md-attribute\.name {
+    color: #d19a55;
+}
+
+.delimiter.md-delimiter {
+    color: #abb2bf;
+}
+
+.attribute\.value.md-attribute\.value {
+    color: #98c379;
+}
+
+.delimiter.md-tag,
+.delimiter.md-attribute\.name,
+.delimiter.md-attribute\.value {
+    color: #abb2bf;
+}
+
+.variable.md-variable {
+    color: #61aeee;
+}

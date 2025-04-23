@@ -367,11 +367,17 @@
       <div class="container">
          <div style="text-align: center; margin: -0.9rem 0 1rem 0;">
             <button id="darkModeBtn"
-               style="margin-right: 1rem; background: #1b1a1a; color: white; padding: 0.5rem 1rem; border: none; border-radius: 8px; cursor: pointer;">Vs
-               Dark</button>
+               style="margin-right: 1rem; background: #1b1a1a; color: white; padding: 0.5rem 1rem; border: none; border-radius: 8px; cursor: pointer;">
+               Vs Dark
+            </button>
             <button id="lightModeBtn"
-               style="background: white; color: black; padding: 0.5rem 1rem; border: none; border-radius: 8px; cursor: pointer;">Vs
-               Light</button>
+               style="margin-right: 1rem; background: white; color: black; padding: 0.5rem 1rem; border: none; border-radius: 8px; cursor: pointer;">
+               Vs Light
+            </button>
+            <button id="oneDarkBtn"
+               style="margin-right: 1rem; background: #282c34; color: #abb2bf; padding: 0.5rem 1rem; border: none; border-radius: 8px; cursor: pointer;">
+               One Dark
+            </button>
          </div>
 
          <!-- Live Playground -->
@@ -730,10 +736,12 @@ That’s it — happy testing!
          CodeDye.highlight();
       });
    </script>
+
    <script>
       const themeLink = document.getElementById('themeStylesheet');
       const darkBtn = document.getElementById('darkModeBtn');
       const lightBtn = document.getElementById('lightModeBtn');
+      const oneDarkBtn = document.getElementById('oneDarkBtn');
 
       const CDN_BASE = "https://cdn.jsdelivr.net/gh/Tezumie/codedye@main/dist/themes/";
 
@@ -744,8 +752,11 @@ That’s it — happy testing!
       lightBtn.addEventListener('click', () => {
          themeLink.href = CDN_BASE + "vs-code-light.css";
       });
-   </script>
 
+      oneDarkBtn.addEventListener('click', () => {
+         themeLink.href = CDN_BASE + "one-dark.css"; // <- Make sure the file exists on the CDN
+      });
+   </script>
 
 </body>
 
