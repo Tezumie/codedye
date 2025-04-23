@@ -28,11 +28,13 @@ Include a theme + script using CDN:
 ```html
 <!-- 1. Theme (dark or light) -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Tezumie/codedye@main/dist/themes/vs-code-dark.css" />
-<!-- Optional: Light theme -->
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Tezumie/codedye@main/dist/themes/vs-code-light.css" /> -->
-
 <!-- 2. Core Script -->
 <script src="https://cdn.jsdelivr.net/gh/Tezumie/codedye@main/dist/builds/codedye.all.umd.js"></script>
+
+
+<!-- Other themes -->
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Tezumie/codedye@main/dist/themes/vs-code-light.css" /> -->
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Tezumie/codedye@main/dist/themes/one-dark.css" /> -->
 ```
 
 > Or load a single language bundle (e.g. `codedye.css.umd.js`) if you don’t need all languages.
