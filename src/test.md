@@ -1,18 +1,47 @@
-import math
+# Markdown Playground
 
-class Circle:
-      def __init__(self, r):
-         self.r = r
+Welcome to the **Markdown** test page! Here's what you can try:
 
-      def area(self):
-         return math.pi * self.r ** 2
+## ✨ Basic Formatting
 
-def describe(shape):
-      if hasattr(shape, 'area'):
-         print(f"Area: {shape.area():.2f}")
-      else:
-         print("Not a valid shape.")
+- *Italic* text  
+- **Bold** text  
+- ***Bold & Italic*** text  
+- ~~Strikethrough~~
 
-# 🎯 Run demo
-c = Circle(3)
-describe(c)
+## ✅ Lists
+
+### Unordered:
+- Apple
+- Banana
+- Mango
+
+### Ordered:
+1. First
+2. Second
+3. Third
+
+## 🧾 Blockquote
+
+> Markdown is lightweight & easy to use!
+
+## 💻 Inline Code
+
+Here’s some `inline code` in a sentence.
+
+## 🧱 Code Block
+
+```python
+def hello(name):
+    return f"Hello, {name}!"
+```
+
+## 🧬 HTML inside Markdown
+
+<p style="color:lightgreen; font-weight: bold;">
+  👋 This is a custom HTML paragraph!
+</p>
+
+<hr />
+
+That’s it — happy testing!
