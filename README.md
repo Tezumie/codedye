@@ -1,4 +1,4 @@
-```md
+
 # 🎨 CodeDye
 
 **CodeDye** is a lightweight, dependency-free syntax highlighter with Monaco/VS Code–style tokenization. It supports live previews, static highlighting, and custom theming — perfect for docs, playgrounds, and dev tools.
@@ -135,4 +135,4 @@ npm run build
 ## 📚 License
 
 MIT License © 2025 — Built with ❤️ by you
-```
+
