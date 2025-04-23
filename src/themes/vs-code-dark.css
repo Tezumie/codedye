@@ -146,6 +146,9 @@ code {
    ========================================================================== */
 
 /* At-rules (@media, @keyframes, etc.) */
+/* pre code[class*="language-css"]#text{
+    color: #d7ba7d!important;
+} */
 .css-keyword\.at-rule {
     color: #c586c0;
 }
@@ -184,6 +187,13 @@ code {
 /* Pseudo-classes/elements (:hover, ::before) */
 .css-keyword {
     color: #569cd6;
+}
+.css-pseudoClass{
+    color: #b46695!important;
+}
+.token.css-keyword.at-rule.keyframes,
+.token.keyword.at-rule.keyframes {
+    color: #b46695;
 }
 
 
@@ -382,6 +392,7 @@ pre code[class*="language-py"] {
 .delimiter.md-attribute\.value {
     color: #808080;
 }
-.variable.md-variable{
+
+.variable.md-variable {
     color: #ce9178;
 }
