@@ -5,6 +5,8 @@ It supports static code highlighting, live previews, and fully custom themes —
 
 > 🔗 [Live Playground Demo](https://tezumie.github.io/codedye/)
 
+![Playground Screenshot](docs/demo.PNG)
+
 ---
 
 ## 🚀 Features
@@ -15,6 +17,7 @@ It supports static code highlighting, live previews, and fully custom themes —
 - 💡 Built-in support: JavaScript, CSS, HTML, Python, Markdown
 - 🌈 Custom themes with per-token CSS targeting
 - 🪄 Live preview for editors/playgrounds
+- 🧩 Extendable with (mostly)Monaco-compatible tokenizer rules
 
 ---
 
@@ -46,13 +49,9 @@ After including the script, CodeDye automatically highlights all `<pre><code cla
 <pre><code class="language-js">const x = 42;</code></pre>
 ```
 
-No config needed. Just use `language-js`, `language-css`, etc.
-
 ---
 
 ### 🔁 Re-Highlight After DOM Changes
-
-Use this if you add code dynamically:
 
 ```js
 CodeDye.highlight();
@@ -69,8 +68,6 @@ CodeDye.highlightBlock(document.querySelector('#myCodeBlock'));
 ---
 
 ### ⚡ Live Editor Preview
-
-Bind a `<textarea>` to a preview container:
 
 ```js
 CodeDye.init({
@@ -122,6 +119,21 @@ To create your own, just override these styles with CSS.
 
 ---
 
+## 🔍 Monaco Tokenizer Compatibility
+
+Many tokenization rules in CodeDye are adapted from the  
+[Monaco Editor’s Monarch tokenizer system](https://microsoft.github.io/monaco-editor/monarch.html).
+
+This provides:
+
+- ✅ Easy rule reuse from Monaco/VS Code ecosystem  
+- 🌱 Extendability with a large, proven base of language grammars  
+- 🛠 Familiar regex patterns for building your own
+
+> Thanks to the Monaco team for making such a powerful system open-source.
+
+---
+
 ## 🛠️ Build Setup (for contributing)
 
 ```bash
@@ -136,7 +148,7 @@ npm run build
 
 ---
 
-## 🧩 Rollup Output
+## 📦 Rollup Output
 
 ```bash
 # Full bundle (all langs)
