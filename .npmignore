@@ -1,0 +1,19 @@
+# Ignore source files if you're only publishing the bundle
+src/
+.vscode/
+demo.html
+*.md
+
+# Ignore config and build tools
+rollup.config.js
+node_modules/
+package-lock.json
+
+# Ignore output that isn't part of the final dist
+*.log
+*.map
+
+# Ignore tests (if any)
+test/
+__tests__/
+*.test.js

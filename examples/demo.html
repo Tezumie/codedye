@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>CodeDye · Live Playground</title>
+
+   <!-- Brand typeface -->
+   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
+   <!-- CodeDye theme -->
+   <link rel="stylesheet" id="themeStylesheet" href="../src/themes/vs-code-dark.css">
+
+   <!-- <link rel="stylesheet" href="../dist/themes/vs-code-light.css"> -->
+   <!-- CodeDye script -->
+   <script src="../dist/builds/codedye.all.umd.js"></script>
+
+   <style>
+      :root {
+         --color-bg: #0d0d0d;
+         --color-bg-alt: #19191a;
+         --color-bg-code: #1e1e1e;
+         --color-text: #e6e6e6;
+         --color-text-muted: #a0a0a0;
+         --color-border: #333;
+         --color-primary: #0a84ff;
+         --color-primary-dark: #0065d9;
+         --color-primary-light: #60a5ff;
+         --radius: 11px;
+         --spacing: 1rem;
+         --transition: 0.2s ease;
+      }
+
+      * {
+         box-sizing: border-box;
+         margin: 0;
+         padding: 0;
+      }
+
+      html,
+      body {
+         font-family: 'Inter', system-ui, sans-serif;
+         background-color: var(--color-bg);
+         color: var(--color-text);
+         line-height: 1.5;
+         height: 100%;
+      }
+
+      body {
+         display: flex;
+         flex-direction: column;
+         min-height: 100vh;
+      }
+
+      .container {
+         width: 100%;
+         max-width: 1600px;
+         margin: 0 auto;
+         padding: 0 var(--spacing);
+      }
+
+      .examples-section {
+         margin-top: 5em !important;
+         max-width: 900px;
+         margin: 0 auto;
+      }
+
+      /* Header */
+      .hero {
+         position: relative;
+         text-align: center;
+         padding: 10rem 1rem;
+         padding-top: 1em;
+         overflow: hidden;
+         isolation: isolate;
+      }
+
+      .hero::before {
+         content: '';
+         position: absolute;
+         inset: 0;
+         background: linear-gradient(135deg, var(--color-primary) 0%, #2321b6cb 100%);
+         opacity: 0.2;
+         z-index: -1;
+         filter: blur(100px);
+      }
+
+      .hero h1 {
+         font-size: 3rem;
+         font-weight: 900;
+         margin-bottom: 1rem;
+      }
+
+      .hero p {
+         max-width: 700px;
+         margin: 0 auto;
+      }
+
+      .hero p.subtitle {
+         font-size: 1.25rem;
+         margin-bottom: 0.5rem;
+      }
+
+      .hero p.note {
+         font-size: 0.875rem;
+         color: var(--color-text-muted);
+      }
+
+      /* Main content */
+      main {
+         flex: 1;
+         padding: 2rem 0;
+      }
+
+      .section {
+         margin-bottom: 4rem;
+      }
+
+      .section-title {
+         font-size: 1.5rem;
+         margin-bottom: 1.5rem;
+         font-weight: 700;
+      }
+
+      /* Card */
+      .card {
+         background-color: rgba(18, 18, 18, 0.6);
+         border-radius: var(--radius);
+         border: 1px solid var(--color-border);
+         overflow: hidden;
+         box-shadow: 0 4px 24px rgba(10, 132, 255, 0.15);
+         backdrop-filter: blur(8px);
+      }
+
+      /* Tabs */
+      .tabs-container {
+         position: relative;
+         display: flex;
+         border-bottom: 1px solid var(--color-border);
+         background-color: var(--color-bg-alt);
+      }
+
+      .tab-slider {
+         position: absolute;
+         bottom: 0;
+         height: 2px;
+         width: var(--tab-width, 25%);
+         background-color: var(--color-primary);
+         transition: transform 0.25s ease;
+      }
+
+      .tab {
+         flex: 1;
+         padding: 1rem;
+         background: none;
+         border: none;
+         color: var(--color-text-muted);
+         font-weight: 600;
+         text-transform: uppercase;
+         letter-spacing: 0.05em;
+         cursor: pointer;
+         transition: color var(--transition);
+         font-family: 'Inter', system-ui, sans-serif;
+      }
+
+      .tab:hover {
+         color: var(--color-text);
+      }
+
+      .tab.active {
+         color: var(--color-text);
+      }
+
+      /* Editor and Preview */
+      .playground {
+         display: grid;
+         grid-template-columns: 1fr;
+         gap: 1.5rem;
+         padding: 1.5rem;
+         background-color: var(--color-bg-alt);
+      }
+
+      @media (min-width: 768px) {
+         .playground {
+            grid-template-columns: 1fr 1fr;
+         }
+      }
+
+      .editor-container {
+         position: relative;
+      }
+
+      textarea.editor {
+         width: 100%;
+         min-height: 400px;
+         height: 100%;
+         resize: vertical;
+         padding: 1rem;
+         background-color: var(--color-bg-code);
+         color: var(--color-text);
+         border: 1px solid var(--color-border);
+         border-radius: var(--radius);
+         font-family: monospace;
+         font-size: 14px;
+         line-height: 1.5;
+         tab-size: 2;
+      }
+
+      textarea.editor:focus {
+         outline: none;
+         border-color: var(--color-primary);
+      }
+
+      .reset-btn {
+         position: absolute;
+         top: 0.5rem;
+         right: 0.5rem;
+         background-color: rgba(50, 50, 50, 0.8);
+         color: var(--color-text-muted);
+         border: none;
+         border-radius: var(--radius);
+         width: 32px;
+         height: 32px;
+         font-size: 16px;
+         cursor: pointer;
+         opacity: 0;
+         transition: opacity var(--transition), background-color var(--transition);
+      }
+
+      .editor-container:hover .reset-btn,
+      .reset-btn:focus {
+         opacity: 1;
+      }
+
+      .reset-btn:hover {
+         background-color: rgba(60, 60, 60, 0.9);
+         color: var(--color-text);
+      }
+
+      .preview {
+         min-height: 350px;
+         padding: 1rem;
+         border: 1px solid var(--color-border);
+         border-radius: var(--radius);
+         overflow: auto;
+      }
+
+      .preview code {
+         font-size: 14px;
+         line-height: 1.5;
+         font-family: monospace;
+         white-space: pre;
+      }
+
+      /* Documentation */
+      .docs {
+         max-width: 900px;
+         margin: 0 auto;
+         margin-top: 3rem;
+      }
+
+      .doc-section {
+         margin-bottom: 2rem;
+      }
+
+      .doc-section h2 {
+         font-size: 1.5rem;
+         margin-bottom: 1rem;
+      }
+
+      .doc-section h3 {
+         font-size: 1.25rem;
+         margin-bottom: 0.75rem;
+      }
+
+      .doc-section p {
+         margin-bottom: 1rem;
+         color: var(--color-text-muted);
+      }
+
+      .doc-section code {
+         /* background-color: rgba(255, 255, 255, 0.1); */
+         padding: 0.1em 0.3em;
+         border-radius: 3px;
+         max-height: 300px;
+
+      }
+
+      .doc-section ul {
+         margin-bottom: 1rem;
+         padding-left: 1.5rem;
+         color: var(--color-text-muted);
+      }
+
+      .doc-section li {
+         margin-bottom: 0.5rem;
+      }
+
+      .doc-section pre {
+         margin-bottom: 1rem;
+         border-radius: var(--radius);
+         border: 1px solid var(--color-border);
+         padding: 1rem;
+         overflow: auto;
+      }
+
+      .inline-code {
+         font-size: 15px;
+         display: inline-block;
+         background-color: var(--color-bg-code);
+         border-radius: 6px !important;
+         color: var(--color-text);
+      }
+
+      /* Footer */
+      footer {
+         padding: 1.5rem 0;
+         text-align: center;
+         font-size: 0.875rem;
+         color: var(--color-text-muted);
+         border-top: 1px solid var(--color-border);
+         background-color: var(--color-bg-alt);
+      }
+
+      /* Scrollbar */
+      ::-webkit-scrollbar {
+         width: 8px;
+         height: 8px;
+      }
+
+      ::-webkit-scrollbar-thumb {
+         background: #3f3f46;
+         border-radius: 9999px;
+      }
+
+      /* Utilities */
+      .mt-1 {
+         margin-top: 0.5rem;
+      }
+
+      .mt-2 {
+         margin-top: 1rem;
+      }
+
+      .mt-4 {
+         margin-top: 2rem;
+      }
+   </style>
+</head>
+
+<body>
+   <!-- Header -->
+   <header class="hero">
+      <div class="container">
+         <h1>CodeDye Live Playground</h1>
+         <p class="subtitle">Instant, dependency-free syntax highlighting for HTML, CSS, JavaScript & more</p>
+         <p class="note">Powered by CodeDye</p>
+      </div>
+   </header>
+
+   <main>
+      <div class="container">
+         <div style="text-align: center; margin: -0.9rem 0 1rem 0;">
+            <button id="darkModeBtn"
+               style="margin-right: 1rem; background: #1b1a1a; color: white; padding: 0.5rem 1rem; border: none; border-radius: 8px; cursor: pointer;">Vs
+               Dark</button>
+            <button id="lightModeBtn"
+               style="background: white; color: black; padding: 0.5rem 1rem; border: none; border-radius: 8px; cursor: pointer;">Vs
+               Light</button>
+         </div>
+
+         <!-- Live Playground -->
+         <section class="section">
+            <div class="card">
+               <div id="langTabs" class="tabs-container">
+                  <div class="tab-slider"></div>
+                  <button class="tab" data-lang="js">JavaScript</button>
+                  <button class="tab" data-lang="html">HTML</button>
+                  <button class="tab" data-lang="css">CSS</button>
+                  <button class="tab" data-lang="py">Python</button>
+                  <button class="tab" data-lang="md">Markdown</button>
+               </div>
+               <div class="playground">
+                  <div class="editor-container">
+                     <textarea id="source" class="editor" spellcheck="false"></textarea>
+                     <button id="resetBtn" class="reset-btn" title="Reset snippet">↺</button>
+                  </div>
+                  <pre id="livePreview" class="preview"></pre>
+               </div>
+            </div>
+         </section>
+
+         <!-- Documentation -->
+         <section class="docs">
+            <div class="doc-section">
+               <h2>🚀 Quick Start</h2>
+               <p>Include any CodeDye theme and the UMD bundle—highlighting runs automatically on <code
+                     class="inline-code">DOMContentLoaded</code>.</p>
+               <pre><code class="language-html">&lt;!-- 1) Include theme --&gt;
+&lt;link rel="stylesheet" href="themes/vs-code-dark.css"&gt;
+
+&lt;!-- 2) Include CodeDye --&gt;
+&lt;script src="builds/codedye.all.umd.js"&gt;&lt;/script&gt;</code></pre>
+            </div>
+
+            <div class="doc-section">
+               <h3>Live Preview Setup</h3>
+               <p>Bind a textarea and preview container with <code class="inline-code">init():</code></p>
+               <pre><code class="language-js">CodeDye.init({
+  source:   '#source',      // textarea
+  target:   '#livePreview', // preview
+  language: 'js',           // 'html' | 'css' | 'js'
+  debounce: 24              // optional ms delay
+});</code></pre>
+            </div>
+
+            <div class="doc-section">
+               <h3>API Helpers</h3>
+               <ul>
+                  <li><code class="inline-code">CodeDye.highlight()</code> — re-highlight all code blocks.</li>
+                  <li><code class="inline-code">CodeDye.highlightBlock(el)</code> — highlight a specific element.</li>
+               </ul>
+               <p>Powered by a Monaco/VS Code–style tokenizer for accurate, theme-consistent syntax highlighting.</p>
+            </div>
+         </section>
+
+         <!-- Examples -->
+         <section class="section examples-section">
+            <h2 class="section-title">Static Examples</h2>
+
+            <div class="doc-section" id="static-html">
+               <h3>HTML</h3>
+               <pre><code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+   &lt;head&gt;
+   &lt;title&gt;Playground Page&lt;/title&gt;
+   &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+   &lt;link rel="stylesheet" href="styles.css" /&gt;
+   &lt;style&gt;
+      body {
+         font-family: 'Comic Sans MS', cursive;
+         background: #f0f8ff;
+      }
+      .highlight-example {
+         background: #fff8dc;
+         border: 2px dashed #ffa;
+         border-radius: 10px;
+      }
+   &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+   &lt;div class="highlight-example"&gt;
+      &lt;h1&gt;✨ Welcome to the Code Playground! ✨&lt;/h1&gt;       
+      &lt;script&gt;
+         // When the page loads, say hi in the console 🐾
+         document.addEventListener('DOMContentLoaded', () =&gt; {
+         console.log("✨ Playground ready!");
+         });
+      &lt;/script&gt;
+   &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+          </code></pre>
+            </div>
+
+            <div class="doc-section" id="static-css">
+               <h3>CSS</h3>
+               <pre><code class="language-css">
+/* 🐶 Dog-themed styles for a pawsome UI */
+.dog-card {
+   background: #f9f6f2;
+   border-radius: 12px;
+   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+   padding: 1rem;
+   transition: transform 0.3s ease;
+}
+
+.puppy {
+   color: #8d6e63;
+   font-size: 18px;
+   font-weight: bold;
+}
+
+.puppy:hover {
+   color: #6d4c41;
+   transform: scale(1.05); /* Zoom in when hovered */
+}
+
+/* Tail-wagging animation (so cute!) */
+@keyframes wag-tail {
+   0% { transform: rotate(-10deg); }
+   50% { transform: rotate(10deg); }
+   100% { transform: rotate(-10deg); }
+}</code></pre>
+            </div>
+
+            <div class="doc-section" id="static-js">
+               <h3>JavaScript</h3>
+               <pre><code class="language-js">
+// 🐾 A playful Dog class with some tricks!
+class Dog {
+   constructor(name, breed) {
+      this.name = name;
+      this.breed = breed;
+      this.isGoodBoy = true;
+   }
+
+   bark() {
+      console.log(`${this.name}: Woof woof! 🐕`);
+      return "🐾";
+   }
+
+   fetch(item) {
+      // Only fetches approved toys!
+      const toyPattern = /^(ball|stick|frisbee)$/;
+      return toyPattern.test(item) ? `fetched ${item}! 🎾` : "not interested... 💤";
+   }
+}
+
+// 🐶 Meet Rex the Labrador!
+const rex = new Dog("Rex", "Labrador");
+rex.bark();         // Logs a happy bark
+rex.fetch("ball");  // Returns "fetched ball! 🎾"
+
+</code></pre>
+            </div>
+
+            <div class="doc-section" id="static-py">
+               <h3>Python</h3>
+               <pre><code class="language-python">
+import math
+
+class Circle:
+      def __init__(self, r):
+         self.r = r
+
+      def area(self):
+         return math.pi * self.r ** 2
+
+def describe(shape):
+      if hasattr(shape, 'area'):
+         print(f"Area: {shape.area():.2f}")
+      else:
+         print("Not a valid shape.")
+
+# 🎯 Run demo
+c = Circle(3)
+describe(c)
+                   
+</code></pre>
+            </div>
+
+
+            <div class="doc-section" id="static-md">
+               <h3>Markdown</h3>
+               <pre><code class="language-markdown">
+# Markdown Playground
+
+Welcome to the **Markdown** test page! Here's what you can try:
+
+## ✨ Basic Formatting
+
+- *Italic* text  
+- **Bold** text  
+- ***Bold & Italic*** text  
+- ~~Strikethrough~~
+
+## ✅ Lists
+
+### Unordered:
+- Apple
+
+### Ordered:
+1. First
+
+## 🧾 Blockquote
+
+> Markdown is lightweight & easy to use!
+
+## 💻 Inline Code
+
+Here’s some `inline code` in a sentence.
+
+## 🧱 Code Block
+
+```html
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+   &lt;head&gt;
+   &lt;title&gt;Playground Page&lt;/title&gt;
+   &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+   &lt;link rel="stylesheet" href="styles.css" /&gt;
+   &lt;style&gt;
+      body {
+         font-family: 'Comic Sans MS', cursive;
+         background: #f0f8ff;
+      }
+      .highlight-example {
+         background: #fff8dc;
+         border: 2px dashed #ffa;
+         border-radius: 10px;
+      }
+   &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+   &lt;div class="highlight-example"&gt;
+      &lt;h1&gt;✨ Welcome to the Code Playground! ✨&lt;/h1&gt;       
+      &lt;script&gt;
+         // When the page loads, say hi in the console 🐾
+         document.addEventListener('DOMContentLoaded', () =&gt; {
+         console.log("✨ Playground ready!");
+         });
+      &lt;/script&gt;
+   &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+```
+
+
+```python
+def hello(name):
+      return f"Hello, {name}!"
+```
+
+
+## 🧬 HTML inside Markdown
+
+&lt;p style="color:lightgreen; font-weight: bold;"&gt;
+  👋 This is a custom HTML paragraph!
+&lt;/p&gt;
+
+&lt;hr /&gt;
+
+
+That’s it — happy testing!
+                  
+</code></pre>
+            </div>
+         </section>
+
+      </div>
+   </main>
+
+   <!-- Footer -->
+   <footer>
+      <div class="container">
+         <p>&copy; <span id="year"></span> CodeDye. All rights reserved.</p>
+      </div>
+   </footer>
+
+   <script>
+      // Update copyright year
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Tab system setup
+      const tabs = document.querySelectorAll('#langTabs .tab');
+      const slider = document.querySelector('.tab-slider');
+
+      // 👇 Dynamically calculate tab width
+      document.documentElement.style.setProperty('--tab-width', `${100 / tabs.length}%`);
+
+      const resetBtn = document.getElementById('resetBtn');
+      const sourceEditor = document.getElementById('source');
+      const preview = document.getElementById('livePreview');
+
+      // Load static examples
+      const examples = {
+         html: document.querySelector('#static-html code').textContent.trim(),
+         css: document.querySelector('#static-css code').textContent.trim(),
+         js: document.querySelector('#static-js code').textContent.trim(),
+         py: document.querySelector('#static-py code').textContent.trim(),
+         md: document.querySelector('#static-md code').textContent.trim()
+      };
+
+      // Function to activate a tab
+      function activateTab(lang) {
+         // Update tab styling
+         tabs.forEach((tab, index) => {
+            const isActive = tab.dataset.lang === lang;
+            tab.classList.toggle('active', isActive);
+
+            // Move slider to active tab position
+            if (isActive) {
+               slider.style.transform = `translateX(${index * 100}%)`;
+            }
+         });
+
+         // Load example code
+         sourceEditor.value = examples[lang] || '';
+
+         // Initialize the live preview
+         CodeDye.init({
+            source: sourceEditor,
+            target: preview,
+            language: lang,
+            debounce: 0
+         });
+      }
+
+      // Set up event listeners
+      resetBtn.addEventListener('click', () => {
+         // Find current active tab and reset its content
+         const activeTab = document.querySelector('#langTabs .tab.active');
+         if (activeTab) {
+            activateTab(activeTab.dataset.lang);
+         }
+      });
+
+      // Add click handlers to tabs
+      tabs.forEach(tab => {
+         tab.addEventListener('click', () => {
+            activateTab(tab.dataset.lang);
+         });
+      });
+
+      // Initialize with JavaScript example
+      window.addEventListener('DOMContentLoaded', () => {
+         activateTab('js');
+         CodeDye.highlight();
+      });
+   </script>
+   <script>
+      const themeLink = document.getElementById('themeStylesheet');
+      const darkBtn = document.getElementById('darkModeBtn');
+      const lightBtn = document.getElementById('lightModeBtn');
+
+      darkBtn.addEventListener('click', () => {
+         themeLink.href = "../dist/themes/vs-code-dark.css";
+      });
+
+      lightBtn.addEventListener('click', () => {
+         themeLink.href = "../dist/themes/vs-code-light.css";
+      });
+   </script>
+
+</body>
+
+</html>

@@ -1,0 +1,404 @@
+/* ==========================================================================
+   Base Styles
+   ========================================================================== */
+pre {
+    margin: 0;
+    overflow: auto;
+    background: #ffffff;
+    color: #000000;
+    padding: 10px;
+    font-size: 14px;
+}
+
+code {
+    display: block;
+    white-space: pre;
+    height: 100%;
+}
+
+/* ==========================================================================
+     Token Styles — Core Language Elements
+     ========================================================================== */
+
+/* Keywords (e.g. if, else, return) */
+pre code[class*="language-"] .keyword {
+    color: #0000FF;
+    /* blue */
+}
+
+/* Flow-control keywords (e.g. if, else, return) */
+pre code[class*="language-"] .keyword\.flow {
+    color: #0000FF;
+    /* same as keyword */
+}
+
+/* Declaration keywords (e.g. const, let, function) */
+pre code[class*="language-"] .keyword\.declaration {
+    color: #0000FF;
+    /* same as keyword */
+}
+
+/* Identifiers (variable & function names) */
+pre code[class*="language-"] .identifier {
+    color: #001080;
+    /* dark blue */
+}
+
+/* Object property names (e.g. myObject.prop) */
+pre code[class*="language-"] .objectName {
+    color: #001080;
+    /* same as identifier */
+}
+
+/* Function names (e.g. doSomething()) */
+pre code[class*="language-"] .functionName {
+    color: #795E26;
+    /* brown */
+}
+
+/* Types (e.g. int, String, MyClass) */
+pre code[class*="language-"] .type,
+pre code[class*="language-"] .type\.identifier {
+    color: #267F99;
+    /* teal */
+}
+
+/* Strings and escapes */
+pre code[class*="language-"] .string {
+    color: #A31515;
+    /* red */
+}
+
+pre code[class*="language-"] .string\.escape {
+    color: #A31515;
+    /* same as string */
+}
+
+pre code[class*="language-"] .string\.escape\.invalid {
+    color: #FF0000;
+    /* bright red for invalid */
+}
+
+/* Numbers (integer, float, hex, octal, binary) */
+pre code[class*="language-"] .number,
+pre code[class*="language-"] .number\.float,
+pre code[class*="language-"] .number\.hex,
+pre code[class*="language-"] .number\.octal,
+pre code[class*="language-"] .number\.binary {
+    color: #098658;
+    /* greenish */
+}
+
+/* Regular expressions */
+pre code[class*="language-"] .regexp,
+pre code[class*="language-"] .regexp\.escape,
+pre code[class*="language-"] .regexp\.escape\.control {
+    color: #811F3F;
+    /* maroon */
+}
+
+pre code[class*="language-"] .regexp\.escape\.other {
+    color: #0000FF;
+    /* blue */
+}
+
+/* Comments (single-line, block, doc) */
+pre code[class*="language-"] .comment,
+pre code[class*="language-"] .comment\.doc {
+    color: #008000;
+    /* green */
+    font-style: italic;
+}
+
+/* Invalid or error text */
+pre code[class*="language-"] .invalid {
+    color: #F44747;
+    /* red error */
+}
+
+/* Delimiters (commas, semicolons, etc.) */
+pre code[class*="language-"] .delimiter {
+    color: #000000;
+    /* black */
+}
+
+/* Bracket pairs at different nesting levels */
+pre code[class*="language-"] .delimiter\.bracket {
+    color: #000000;
+}
+
+pre code[class*="language-"] .delimiter\.bracket\.level1 {
+    color: #0451A5;
+}
+
+pre code[class*="language-"] .delimiter\.bracket\.level2 {
+    color: #881798;
+}
+
+pre code[class*="language-"] .delimiter\.bracket\.level3 {
+    color: #AA0D91;
+}
+
+pre code[class*="language-"] .delimiter\.bracket\.level4 {
+    color: #0451A5;
+}
+
+pre code[class*="language-"] .delimiter\.bracket\.level5 {
+    color: #881798;
+}
+
+pre code[class*="language-"] .delimiter\.bracket\.level6 {
+    color: #AA0D91;
+}
+
+/* ==========================================================================
+     Token Styles — CSS‑Specific Overrides
+     ========================================================================== */
+
+/* At‑rules (@media, @keyframes, etc.) */
+pre code[class*="language-"] .css-keyword\.at-rule {
+    color: #0000FF;
+    /* blue */
+}
+
+/* Selectors (element, class, ID, pseudo) */
+pre code[class*="language-"] .css-selector {
+    color: #800000;
+    /* maroon */
+}
+
+/* Property names (e.g. color, margin-top) */
+pre code[class*="language-"] .css-attribute\.name {
+    color: #0000FF;
+    /* blue */
+}
+
+/* Numeric values & units, hex colors */
+pre code[class*="language-"] .css-number,
+pre code[class*="language-"] .css-number\.hex {
+    color: #098658;
+}
+
+/* Identifiers in values (e.g. system-ui, flex) */
+pre code[class*="language-"] .css-identifier {
+    color: #001080;
+    /* dark blue */
+}
+
+/* Functions (e.g. rgb(), url(), calc()) */
+pre code[class*="language-"] .css-function {
+    color: #795E26;
+    /* brown */
+}
+
+/* Parentheses in functions */
+pre code[class*="language-"] .css-delimiter\.parenthesis {
+    color: #000000;
+    /* black */
+}
+
+/* Pseudo‑classes/elements (:hover, ::before) */
+pre code[class*="language-"] .css-keyword {
+    color: #0000FF;
+    /* blue */
+}
+
+/* ==========================================================================
+     Token Styles — HTML‑Specific Overrides
+     ========================================================================== */
+
+/* Doctype, XML declarations */
+pre code[class*="language-"] .html-metatag\.content {
+    color: #800000;
+    /* maroon */
+}
+
+/* Tags (<div>, </body>, custom components) */
+pre code[class*="language-"] .html-metatag,
+pre code[class*="language-"] .html-tag {
+    color: #800000;
+    /* maroon */
+}
+
+/* Attribute names (class, id, data‑*) */
+pre code[class*="language-"] .html-attribute\.name {
+    color: #0000FF;
+    /* blue */
+}
+
+/* Attribute values ("container", 'main') */
+pre code[class*="language-"] .html-attribute\.value {
+    color: #A31515;
+    /* red */
+}
+
+/* Tag punctuation (<, >, /, =) */
+pre code[class*="language-"] .html-delimiter {
+    color: #000000;
+    /* black */
+}
+
+.html-comment,
+.html-comment\.content {
+    color: #008000;
+}
+
+/* ==========================================================================
+   Token Styles — Python-Specific Overrides (VS Code Light)
+   ========================================================================== */
+pre code[class*="language-py"] {
+    color: #000000;
+}
+
+/* Keywords (def, class, return, etc.) */
+pre code[class*="language-py"] .py-keyword {
+    color: #0000FF;
+}
+
+/* Built-in functions (print, len, range, etc.) */
+pre code[class*="language-py"] .py-identifier {
+    color: #001080;
+}
+
+/* Comments (# this is a comment) */
+pre code[class*="language-py"] .py-comment {
+    color: #008000;
+    font-style: italic;
+}
+
+/* Strings (single, double, triple-quoted) */
+pre code[class*="language-py"] .py-string {
+    color: #A31515;
+}
+
+/* Escape sequences inside strings */
+pre code[class*="language-py"] .py-string.escape {
+    color: #A31515;
+}
+
+/* Numbers (integers, floats, hex, etc.) */
+pre code[class*="language-py"] .py-number {
+    color: #098658;
+}
+
+/* Decorators and special syntax (e.g. @classmethod) */
+pre code[class*="language-py"] .py-tag {
+    color: #795E26;
+}
+
+/* Delimiters (commas, colons, parens) */
+pre code[class*="language-py"] .py-delimiter {
+    color: #000000;
+}
+
+/* Brackets, including rainbow levels */
+pre code[class*="language-py"] .py-delimiter.bracket {
+    color: #000000;
+}
+
+pre code[class*="language-py"] .py-delimiter.bracket.level1 {
+    color: #0451A5;
+}
+
+pre code[class*="language-py"] .py-delimiter.bracket.level2 {
+    color: #881798;
+}
+
+pre code[class*="language-py"] .py-delimiter.bracket.level3 {
+    color: #AA0D91;
+}
+
+pre code[class*="language-py"] .py-delimiter.bracket.level4 {
+    color: #0451A5;
+}
+
+pre code[class*="language-py"] .py-delimiter.bracket.level5 {
+    color: #881798;
+}
+
+pre code[class*="language-py"] .py-delimiter.bracket.level6 {
+    color: #AA0D91;
+}
+
+/* Invalid or error text */
+pre code[class*="language-py"] .py-invalid {
+    color: #F44747;
+}
+
+/* Python: self */
+pre code[class*="language-py"] .py-keyword\.self {
+    color: #0000FF;
+}
+
+/* Python: True, False, None */
+pre code[class*="language-py"] .py-constant\.language {
+    color: #0000FF;
+}
+
+/* Python Flow Control */
+pre code[class*="language-py"] .py-keyword\.flow {
+    color: #AF00DB;
+}
+
+/* Python Declarations */
+pre code[class*="language-py"] .py-keyword\.declaration {
+    color: #0000FF;
+}
+
+/* Python Logical Operators */
+pre code[class*="language-py"] .py-keyword\.operator {
+    color: #0000FF;
+}
+
+/* Python class names */
+pre code[class*="language-py"] .py-type\.identifier {
+    color: #267F99;
+}
+
+/* Python function calls */
+pre code[class*="language-py"] .py-functionName {
+    color: #795E26;
+}
+
+/* ==========================================================================
+   Markdown Inline HTML Syntax
+   ========================================================================== */
+
+/* Tag names and delimiters (<, </, />, >) */
+pre code[class*="language-"] .tag.md-tag,
+pre code[class*="language-"] .delimiter.md-delimiter {
+    color: #800000;
+    /* match .html-tag style */
+}
+
+/* Attribute names in inline HTML tags */
+pre code[class*="language-"] .attribute\.name.md-attribute\.name {
+    color: #0000FF;
+    /* match .html-attribute.name style */
+}
+
+/* Equals signs in attributes */
+pre code[class*="language-"] .delimiter.md-delimiter {
+    color: #000000;
+    /* same as .html-delimiter */
+}
+
+/* Attribute values ("…") */
+pre code[class*="language-"] .attribute\.value.md-attribute\.value {
+    color: #A31515;
+    /* same as .html-attribute.value */
+}
+
+/* Optional: style punctuation inside tags differently */
+pre code[class*="language-"] .delimiter.md-tag,
+pre code[class*="language-"] .delimiter.md-attribute\.name,
+pre code[class*="language-"] .delimiter.md-attribute\.value {
+    color: #000000;
+    /* subtle styling for inline HTML */
+}
+
+/* Markdown-style inline code variables */
+pre code[class*="language-"] .variable.md-variable {
+    color: #A31515;
+    /* same as .string */
+}

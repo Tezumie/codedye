@@ -1,0 +1,387 @@
+/* ==========================================================================
+   Base Styles
+   ========================================================================== */
+pre {
+    margin: 0;
+    overflow: auto;
+    background: #1E1E1E;
+    color: #d4d4d4;
+    padding: 10px;
+    font-size: 14px;
+}
+
+code {
+    display: block;
+    white-space: pre;
+    height: 100%;
+}
+
+/* ==========================================================================
+   Token Styles — Core Language Elements
+   ========================================================================== */
+
+/* Keywords (e.g. if, else, return) */
+.keyword {
+    color: #569cd6;
+}
+
+/* Flow-control keywords (e.g. if, else, return) */
+.keyword\.flow {
+    color: #c586c0;
+    /* font-weight: bold; */
+}
+
+/* Declaration keywords (e.g. const, let, function) */
+.keyword\.declaration {
+    color: #569cd6;
+    /* font-weight: bold; */
+}
+
+/* Identifiers (variable & function names) */
+.identifier {
+    color: #9cdcfe;
+}
+
+/* Object property names (e.g. myObject.prop) */
+.objectName {
+    color: #4fc1ff;
+    /* font-style: italic; */
+}
+
+/* Function names (e.g. doSomething()) */
+.functionName {
+    color: #dcdcaa;
+}
+
+/* Types (e.g. int, String, MyClass) */
+.type,
+.type\.identifier {
+    color: #4ec9b0;
+}
+
+/* Strings and escapes */
+.string {
+    color: #ce9178;
+}
+
+.string\.escape {
+    color: #d7ba7d;
+}
+
+.string\.escape\.invalid {
+    color: #f44747;
+}
+
+/* Numbers (integer, float, hex, octal, binary) */
+.number,
+.number\.float,
+.number\.hex,
+.number\.octal,
+.number\.binary {
+    color: #b5cea8;
+}
+
+/* Regular expressions */
+.regexp,
+.regexp\.escape,
+.regexp\.escape\.control {
+    color: #b46695;
+}
+
+.regexp\.escape\.other {
+    color: #569cd6;
+}
+
+/* Comments (single-line, block, doc) */
+.comment,
+.comment\.doc {
+    color: #6a9955;
+    /* font-style: italic; */
+}
+
+/* Invalid or error text */
+.invalid {
+    color: #f44747;
+}
+
+/* Delimiters (commas, semicolons, etc.) */
+.delimiter {
+    color: #dcdcdc;
+}
+
+/* Bracket pairs at different nesting levels */
+.delimiter\.bracket {
+    color: #ffd700;
+    /* default bracket color */
+}
+
+.delimiter\.bracket\.level1 {
+    color: #FFD700;
+}
+
+.delimiter\.bracket\.level2 {
+    color: #b46695;
+}
+
+.delimiter\.bracket\.level3 {
+    color: #569CD6;
+}
+
+.delimiter\.bracket\.level4 {
+    color: #FFD700;
+}
+
+.delimiter\.bracket\.level5 {
+    color: #b46695;
+}
+
+.delimiter\.bracket\.level6 {
+    color: #569CD6;
+}
+
+
+/* ==========================================================================
+   Token Styles — CSS-Specific Overrides
+   (Each token also receives a “css-…” class)
+   ========================================================================== */
+
+/* At-rules (@media, @keyframes, etc.) */
+.css-keyword\.at-rule {
+    color: #c586c0;
+}
+
+/* Selectors (element, class, ID, pseudo) */
+.css-selector {
+    color: #d7ba7d;
+}
+
+/* Property names (e.g. color, margin-top) */
+.css-attribute\.name {
+    color: #9cdcfe;
+}
+
+/* Numeric values & units, hex colors */
+.css-number,
+.css-number\.hex {
+    color: #b5cea8;
+}
+
+/* Identifiers in values (e.g. system-ui, flex) */
+.css-identifier {
+    color: #ce9178;
+}
+
+/* Functions (e.g. rgb(), url(), calc()) */
+.css-function {
+    color: #9cdcfe;
+}
+
+/* Parentheses in functions */
+.css-delimiter\.parenthesis {
+    color: #dcdcdc;
+}
+
+/* Pseudo-classes/elements (:hover, ::before) */
+.css-keyword {
+    color: #569cd6;
+}
+
+
+/* ==========================================================================
+   Token Styles — HTML-Specific Overrides
+   (Each token also receives an “html-…” class)
+   ========================================================================== */
+
+/* Doctype, XML declarations */
+.html-metatag\.content {
+    color: #9cdcfe;
+}
+
+/* Tags (<div>, </body>, custom components) */
+.html-metatag,
+.html-tag {
+    color: #569cd6;
+}
+
+/* Attribute names (class, id, data-*) */
+.html-attribute\.name {
+    color: #9cdcfe;
+}
+
+/* Attribute values ("container", 'main') */
+.html-attribute\.value {
+    color: #ce9178;
+}
+
+/* Tag punctuation (<, >, /, =) */
+.html-delimiter {
+    color: #808080;
+}
+
+.html-comment,
+.html-comment\.content {
+    color: #6a9955;
+}
+
+/* ==========================================================================
+   Token Styles — Python-Specific Overrides
+   (Each token also receives a “py-…” class)
+   ========================================================================== */
+pre code[class*="language-py"] {
+    color: #dcdcdc;
+}
+
+/* Keywords (def, class, return, etc.) */
+.py-keyword {
+    color: #569cd6;
+}
+
+/* Built-in functions (print, len, range, etc.) — if classified separately */
+.py-identifier {
+    color: #9cdcfe;
+}
+
+/* Comments (# this is a comment) */
+.py-comment {
+    color: #6a9955;
+}
+
+/* Strings (single, double, triple-quoted) */
+.py-string {
+    color: #ce9178;
+}
+
+/* Escape sequences inside strings */
+.py-string.escape {
+    color: #d7ba7d;
+}
+
+/* Numbers (integers, floats, hex, etc.) */
+.py-number {
+    color: #b5cea8;
+}
+
+/* Decorators and special syntax (e.g. @classmethod) */
+.py-tag {
+    color: #c586c0;
+}
+
+/* Delimiters (commas, colons, parens) */
+.py-delimiter {
+    color: #dcdcdc;
+}
+
+/* Brackets, including rainbow levels */
+.py-delimiter.bracket {
+    color: #ffd700;
+}
+
+.py-delimiter.bracket.level1 {
+    color: #FFD700;
+}
+
+.py-delimiter.bracket.level2 {
+    color: #b46695;
+}
+
+.py-delimiter.bracket.level3 {
+    color: #569CD6;
+}
+
+.py-delimiter.bracket.level4 {
+    color: #FFD700;
+}
+
+.py-delimiter.bracket.level5 {
+    color: #b46695;
+}
+
+.py-delimiter.bracket.level6 {
+    color: #569CD6;
+}
+
+/* Invalid / unmatched tokens */
+.py-invalid {
+    color: #f44747;
+}
+
+/* Python: self */
+.py-keyword\.self {
+    color: #569cd6;
+}
+
+/* Python: True, False, None */
+.py-constant\.language {
+    color: #569cd6;
+}
+
+/* Python Flow Control */
+.py-keyword\.flow {
+    color: #c586c0;
+}
+
+/* Python Declarations */
+.py-keyword\.declaration {
+    color: #569cd6;
+}
+
+/* Python Logical Operators */
+.py-keyword\.operator {
+    color: #569cd6;
+}
+
+/* Python class names */
+.py-type.identifier {
+    color: #4ec9b0;
+}
+
+/* Python function calls */
+.py-functionName {
+    color: #dcdcaa;
+}
+
+.py-delimiter.bracket.level1,
+.py-delimiter.bracket.level2,
+.py-delimiter.bracket.level3,
+.py-delimiter.bracket.level4,
+.py-delimiter.bracket.level5,
+.py-delimiter.bracket.level6 {
+    color: #ffd700;
+}
+
+
+/* ==========================================================================
+   Token Styles — Markdown Inline HTML Syntax
+   ========================================================================== */
+
+/* Tag names and delimiters (<, </, />, >) */
+.tag.md-tag,
+.delimiter.md-delimiter {
+    color: #569cd6;
+}
+
+/* Attribute names in inline HTML tags */
+.attribute\.name.md-attribute\.name {
+    color: #9cdcfe;
+}
+
+/* Equals signs in attributes */
+.delimiter.md-delimiter {
+    /* You can override the general delimiter style here if you want */
+    color: #808080;
+}
+
+/* Attribute values ("…") */
+.attribute\.value.md-attribute\.value {
+    color: #ce9178;
+}
+
+/* Optional: style punctuation inside tags differently */
+.delimiter.md-tag,
+.delimiter.md-attribute\.name,
+.delimiter.md-attribute\.value {
+    color: #808080;
+}
+.variable.md-variable{
+    color: #ce9178;
+}
