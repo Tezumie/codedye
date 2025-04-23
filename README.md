@@ -20,13 +20,13 @@
 
 ## 📦 Installation
 
-+++html
+```html
 <!-- 1) Add a theme -->
 <link rel="stylesheet" href="themes/vs-code-dark.css" />
 
 <!-- 2) Load CodeDye UMD bundle -->
 <script src="builds/codedye.all.umd.js"></script>
-+++
+```
 
 > Or load individual bundles per language (e.g. `codedye.css.umd.js`) to keep things lean.
 
@@ -36,36 +36,36 @@
 
 ### 🔧 Live Preview
 
-+++js
+```js
 CodeDye.init({
   source: '#editor',      // <textarea> selector or element
   target: '#preview',     // <pre> or <div> selector or element
   language: 'js',         // 'js' | 'html' | 'css' | 'py' | 'md'
   debounce: 30            // optional (ms)
 });
-+++
+```
 
 ### 📄 Static Highlighting
 
 Highlight all code blocks with a `language-xxx` class:
 
-+++js
+```js
 CodeDye.highlight(); // Call once after DOMContentLoaded
-+++
+```
 
 Or highlight a single block:
 
-+++js
+```js
 CodeDye.highlightBlock('#someCodeBlock');
-+++
+```
 
 ### 🎨 Custom Highlighting to String
 
 Convert code to highlighted HTML string:
 
-+++js
+```js
 const html = CodeDye.highlightElement('const x = 1;', { language: 'js' });
-+++
+```
 
 ---
 
@@ -90,10 +90,10 @@ Comes with two built-in themes:
 
 Theme files target language-aware classes like:
 
-+++html
+```html
 <span class="keyword css-keyword">...</span>
 <span class="string py-string">...</span>
-+++
+```
 
 You can build your own theme by overriding these styles.
 
