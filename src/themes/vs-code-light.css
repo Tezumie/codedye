@@ -151,62 +151,101 @@ pre code[class*="language-"] .delimiter\.bracket\.level6 {
     color: #AA0D91;
 }
 
-/* ==========================================================================
-     Token Styles — CSS‑Specific Overrides
-     ========================================================================== */
+/* ═════════════════════════════════════════════════════
+   Token Styles — CSS-Specific (VS Code Light)
+   ═════════════════════════════════════════════════════ */
 
-/* At‑rules (@media, @keyframes, etc.) */
-pre code[class*="language-"] .css-keyword\.at-rule {
-    color: #0000FF;
-    /* blue */
+/* At-rules (@media, @keyframes, …) */
+.css-keyword\.at-rule {
+    color: #AF00DB;
 }
 
-/* Selectors (element, class, ID, pseudo) */
-pre code[class*="language-"] .css-selector {
+/* blue */
+
+/* Selectors and plain foreground text */
+code .css-foreground,
+.css-selector {
     color: #800000;
-    /* maroon */
 }
 
-/* Property names (e.g. color, margin-top) */
-pre code[class*="language-"] .css-attribute\.name {
-    color: #0000FF;
-    /* blue */
-}
+/* maroon */
 
-/* Numeric values & units, hex colors */
-pre code[class*="language-"] .css-number,
-pre code[class*="language-"] .css-number\.hex {
+/* Numeric constants (50%, 1.5rem) */
+.constant\.numeric,
+.css-constant\.numeric {
     color: #098658;
 }
 
-/* Identifiers in values (e.g. system-ui, flex) */
-pre code[class*="language-"] .css-identifier {
+/* green */
+
+/* Property names (color, margin-top) */
+.css-attribute\.name {
+    color: #E50000;
+}
+
+/* blue */
+
+/* Numbers & units inside values; hex colours */
+.css-number {
+    color: #098658;
+}
+
+.css-number\.hex {
+    color: #0451A5 !important;
+}
+
+/* same green */
+
+/* Identifiers inside values (flex, system-ui) */
+.css-identifier {
     color: #001080;
-    /* dark blue */
 }
 
-/* Functions (e.g. rgb(), url(), calc()) */
-pre code[class*="language-"] .css-function {
+/* dark blue */
+
+/* Functions (rgb(), url(), calc()) */
+.css-function {
     color: #795E26;
-    /* brown */
 }
 
-/* Parentheses in functions */
-pre code[class*="language-"] .css-delimiter\.parenthesis {
+/* brown */
+
+/* Parentheses in function calls */
+.css-delimiter\.parenthesis {
     color: #000000;
-    /* black */
 }
 
-/* Pseudo‑classes/elements (:hover, ::before) */
-pre code[class*="language-"] .css-keyword {
+/* black */
+
+/* Generic CSS keywords (inherit, initial) */
+.css-keyword {
     color: #0000FF;
-    /* blue */
 }
+
+/* blue */
+
+/* Pseudo-classes & pseudo-elements */
+.keyword\.pseudo-class,
+.css-keyword\.pseudo-class,
+.keyword\.pseudo-element,
+.css-keyword\.pseudo-element {
+    color: #0000FF;
+}
+
+/* blue */
+
+/* Special colouring for @keyframes identifiers */
+.token.css-keyword.at-rule.keyframes,
+.token.keyword.at-rule.keyframes {
+    color: #AF00DB
+}
+
+/* violet */
+
 
 /* ==========================================================================
      Token Styles — HTML‑Specific Overrides
-     ========================================================================== */
-
+     ==========================================================================*/
 /* Doctype, XML declarations */
 pre code[class*="language-"] .html-metatag\.content {
     color: #800000;
@@ -222,13 +261,13 @@ pre code[class*="language-"] .html-tag {
 
 /* Attribute names (class, id, data‑*) */
 pre code[class*="language-"] .html-attribute\.name {
-    color: #0000FF;
+    color: #E50000;
     /* blue */
 }
 
 /* Attribute values ("container", 'main') */
 pre code[class*="language-"] .html-attribute\.value {
-    color: #A31515;
+    color: #0000FF;
     /* red */
 }
 

@@ -92,19 +92,19 @@ code {
     color: #56b6c2;
 }
 
-.delimiter\.bracket\.level1 {
+.delimiter\.bracket\.level3 {
     color: #56b6b9;
 }
 
-.delimiter\.bracket\.level2 {
+.delimiter\.bracket\.level1 {
     color: #d19a56;
 }
 
-.delimiter\.bracket\.level3 {
+.delimiter\.bracket\.level2 {
     color: #c678dd;
 }
 
-.delimiter\.bracket\.level4 {
+.delimiter\.bracket\.level6 {
     color: #43b6c2;
 }
 
@@ -112,27 +112,45 @@ code {
     color: #c678dd;
 }
 
-.delimiter\.bracket\.level6 {
+.delimiter\.bracket\.level4 {
     color: #c79a66;
 }
 
-/* ==========================================================================
-   Token Styles — CSS-Specific Overrides
-   ========================================================================== */
+/* ═════════════════════════════════════════════════════
+   Token Styles — CSS-Specific (One Dark)
+   ═════════════════════════════════════════════════════ */
 
 .css-keyword\.at-rule {
     color: #c678dd;
 }
 
+/* purple */
+
+code .css-foreground,
 .css-selector {
+    color: #d19a55;
+}
+
+/* salmon */
+
+.constant\.numeric,
+.css-constant\.numeric {
+    color: #d19a55;
+}
+
+/* sand */
+
+.css-attribute\.name {
+    color: #abb2bf;
+}
+
+/* green */
+
+.css-number {
     color: #e06c75;
 }
 
-.css-attribute\.name {
-    color: #98c379;
-}
-
-.css-number,
+/* sand */
 .css-number\.hex {
     color: #d19a55;
 }
@@ -141,8 +159,10 @@ code {
     color: #abb2bf;
 }
 
+/* light grey */
+
 .css-function {
-    color: #abb2bf;
+    color: #56B6C2;
 }
 
 .css-delimiter\.parenthesis {
@@ -153,14 +173,25 @@ code {
     color: #c678dd;
 }
 
-.css-pseudoClass {
-    color: #c678dd !important;
+/* purple */
+
+.keyword\.pseudo-class,
+.css-keyword\.pseudo-class,
+.keyword\.pseudo-element,
+.css-keyword\.pseudo-element {
+    color: #56B6C2;
 }
 
+/* purple */
+
+/* @keyframes identifier highlight */
 .token.css-keyword.at-rule.keyframes,
 .token.keyword.at-rule.keyframes {
     color: #61aeee;
 }
+
+/* blue */
+
 
 /* ==========================================================================
    Token Styles — HTML-Specific Overrides

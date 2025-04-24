@@ -1,0 +1,26 @@
+/* 🐶 Dog-themed styles for a pawsome UI */
+.dog-card {
+  background: #f9f6f2;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.puppy::before {
+  color: #8d6e63;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.puppy:hover {
+  color: #6d4c41;
+  transform: scale(1.05); /* Zoom in when hovered */
+}
+
+/* Tail-wagging animation (so cute!) */
+@keyframes wag-tail {
+  0% { transform: rotate(-10deg); }
+  50% { transform: rotate(10deg); }
+  100% { transform: rotate(-10deg); }
+}

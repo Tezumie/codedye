@@ -144,18 +144,19 @@ code {
    Token Styles — CSS-Specific Overrides
    (Each token also receives a “css-…” class)
    ========================================================================== */
-
-/* At-rules (@media, @keyframes, etc.) */
-/* pre code[class*="language-css"]#text{
-    color: #d7ba7d!important;
-} */
 .css-keyword\.at-rule {
     color: #c586c0;
 }
 
 /* Selectors (element, class, ID, pseudo) */
+code .css-foreground,
 .css-selector {
     color: #d7ba7d;
+}
+
+.constant\.numeric,
+.css-constant\.numeric {
+    color: #b5cea8;
 }
 
 /* Property names (e.g. color, margin-top) */
@@ -164,9 +165,12 @@ code {
 }
 
 /* Numeric values & units, hex colors */
-.css-number,
-.css-number\.hex {
+.css-number {
     color: #b5cea8;
+}
+
+.css-number\.hex {
+    color: #CE9178;
 }
 
 /* Identifiers in values (e.g. system-ui, flex) */
@@ -176,7 +180,7 @@ code {
 
 /* Functions (e.g. rgb(), url(), calc()) */
 .css-function {
-    color: #9cdcfe;
+    color: #DCDCAA;
 }
 
 /* Parentheses in functions */
@@ -188,14 +192,20 @@ code {
 .css-keyword {
     color: #569cd6;
 }
-.css-pseudoClass{
-    color: #b46695!important;
+
+.keyword\.pseudo-class,
+.css-keyword\.pseudo-class {
+    color: #4EC9B0;
 }
+
+.keyword\.pseudo-element {
+    color: #4EC9B0;
+}
+
 .token.css-keyword.at-rule.keyframes,
 .token.keyword.at-rule.keyframes {
     color: #b46695;
 }
-
 
 /* ==========================================================================
    Token Styles — HTML-Specific Overrides
