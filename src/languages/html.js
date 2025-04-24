@@ -5,7 +5,7 @@ import './css.js';  // html uses <style>
 import CodeDye from '../codedye.js';    
 export function getHtmlRules() {
     return {
-       defaultToken: '',
+       defaultToken: 'foreground',
        tokenPostfix: '.html',
        ignoreCase: true,
  

@@ -3,7 +3,7 @@ import { registerLanguage } from '../utils.js';
 import CodeDye from '../codedye.js';
 export function getPyRules() {
     return {
-        defaultToken: '',
+        defaultToken: 'foreground',
         tokenPostfix: '.python',
 
         keywords: [

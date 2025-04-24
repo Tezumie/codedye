@@ -8,7 +8,7 @@ import CodeDye from '../codedye.js';
 
 export function getMdRules() {
   return {
-    defaultToken: '',
+    defaultToken: 'foreground',
     tokenPostfix: '.md',
 
     control: /[\\`*_\[\]{}()#+\-.!]/,

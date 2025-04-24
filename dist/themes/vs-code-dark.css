@@ -252,7 +252,7 @@ code .css-foreground,
    Token Styles — Python-Specific Overrides
    (Each token also receives a “py-…” class)
    ========================================================================== */
-pre code[class*="language-py"] {
+.py-foreground {
     color: #dcdcdc;
 }
 
