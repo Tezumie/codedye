@@ -34,8 +34,6 @@
          --radius: 11px;
          --spacing: 1rem;
          --transition: 0.2s ease;
-         --editor-background: #1E1E1E;
-         --editor-foreground: #d4d4d4;
       }
 
       * {
@@ -750,18 +748,18 @@ That’s it — happy testing!
 
       // Theme switching
       const themeLink = document.getElementById('themeStylesheet');
-      const CDN_BASE = "https://cdn.jsdelivr.net/gh/Tezumie/codedye@main/dist/themes/";
+      const CDN_BASE = "../dist/themes/";
 
       document.getElementById('darkModeBtn').addEventListener('click', () => {
-         themeLink.href = CDN_BASE + "vs-code-dark.css";
+         themeLink.href = CDN_BASE + "vs-code-dark.css?v=1.0.5";
       });
 
       document.getElementById('lightModeBtn').addEventListener('click', () => {
-         themeLink.href = CDN_BASE + "vs-code-light.css";
+         themeLink.href = CDN_BASE + "vs-code-light.css?v=1.0.5";
       });
 
       document.getElementById('oneDarkBtn').addEventListener('click', () => {
-         themeLink.href = CDN_BASE + "one-dark.css";
+         themeLink.href = CDN_BASE + "one-dark.css?v=1.0.5";
       });
    </script>
 
