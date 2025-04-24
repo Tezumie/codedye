@@ -142,7 +142,35 @@ Tokens are decorated with semantic classes for easy styling:
 - `vs-code-light.css`
 - `one-dark.css`
 
-To create a new theme, override token classes in your own CSS file.
+### 🧑‍🎨 Create Custom Themes Easily
+
+Want to build your own theme?
+
+I've included a ready-to-edit base template at: `src/themes/custom-theme.css`
+
+This file replicates the structure of our built-in themes but uses `:root` variables for every major token color.  
+💡 Just tweak the variables at the top — no need to touch the rest of the selectors.
+
+   ```css
+:root {
+  --editor-background: #1e1e1e;
+  --editor-foreground: #d4d4d4;
+  --color-keyword: #569cd6;
+  --color-string: #ce9178;
+  /* ...and so on */
+}
+   ```
+
+The rest of the theme uses these variables under the hood:
+
+   ```css
+.keyword { color: var(--color-keyword); }
+.string  { color: var(--color-string); }
+/* etc. */
+   ```
+
+This makes it super easy to create and preview new themes  
+without digging through hundreds of lines of styles.
 
 ---
 

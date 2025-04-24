@@ -1,0 +1,216 @@
+/* ==========================================================================
+   Custom Theme — Editable CSS Variables
+   ========================================================================== */
+   :root {
+    --editor-background: #1E1E1E;
+    --editor-foreground: #d4d4d4;
+
+    /* Core Token Colors */
+    --color-keyword: #569cd6;
+    --color-keyword-flow: #c586c0;
+    --color-keyword-declaration: #569cd6;
+    --color-identifier: #9cdcfe;
+    --color-object-name: #4fc1ff;
+    --color-function-name: #dcdcaa;
+    --color-type: #4ec9b0;
+    --color-string: #ce9178;
+    --color-string-escape: #d7ba7d;
+    --color-string-escape-invalid: #f44747;
+    --color-number: #b5cea8;
+    --color-regexp: #b46695;
+    --color-regexp-escape-other: #569cd6;
+    --color-comment: #6a9955;
+    --color-invalid: #f44747;
+    --color-delimiter: #dcdcdc;
+
+    /* Bracket Nesting Colors */
+    --color-bracket-1: #FFD700;
+    --color-bracket-2: #b46695;
+    --color-bracket-3: #569CD6;
+    --color-bracket-4: #FFD700;
+    --color-bracket-5: #b46695;
+    --color-bracket-6: #569CD6;
+
+    /* CSS-Specific */
+    --color-css-at-rule: #c586c0;
+    --color-css-selector: #d7ba7d;
+    --color-css-attribute: #9cdcfe;
+    --color-css-number: #b5cea8;
+    --color-css-hex: #CE9178;
+    --color-css-identifier: #ce9178;
+    --color-css-function: #DCDCAA;
+    --color-css-keyword: #569cd6;
+    --color-css-pseudo: #4EC9B0;
+    --color-css-keyframes: #b46695;
+
+    /* HTML-Specific */
+    --color-html-tag: #569cd6;
+    --color-html-attribute-name: #9cdcfe;
+    --color-html-attribute-value: #ce9178;
+    --color-html-delimiter: #808080;
+    --color-html-comment: #6a9955;
+
+    /* Python-Specific */
+    --color-py-keyword: #569cd6;
+    --color-py-identifier: #9cdcfe;
+    --color-py-comment: #6a9955;
+    --color-py-string: #ce9178;
+    --color-py-escape: #d7ba7d;
+    --color-py-number: #b5cea8;
+    --color-py-decorator: #c586c0;
+    --color-py-invalid: #f44747;
+    --color-py-self: #569cd6;
+    --color-py-constant: #569cd6;
+    --color-py-operator: #569cd6;
+    --color-py-type: #4ec9b0;
+    --color-py-function: #dcdcaa;
+
+    /* Markdown Inline HTML */
+    --color-md-tag: #569cd6;
+    --color-md-attribute-name: #9cdcfe;
+    --color-md-delimiter: #808080;
+    --color-md-attribute-value: #ce9178;
+    --color-md-variable: #ce9178;
+}
+
+/* ==========================================================================
+   Base Styles
+   ========================================================================== */
+pre {
+    margin: 0;
+    overflow: auto;
+    background: var(--editor-background);
+    color: var(--editor-foreground);
+    padding: 10px;
+    font-size: 14px;
+}
+
+code {
+    display: block;
+    white-space: pre;
+    height: 100%;
+}
+
+/* ==========================================================================
+   Token Styles — Core Language Elements
+   ========================================================================== */
+.keyword { color: var(--color-keyword); }
+.keyword\.flow { color: var(--color-keyword-flow); }
+.keyword\.declaration { color: var(--color-keyword-declaration); }
+
+.identifier { color: var(--color-identifier); }
+.objectName { color: var(--color-object-name); }
+.functionName { color: var(--color-function-name); }
+
+.type, .type\.identifier { color: var(--color-type); }
+
+.string { color: var(--color-string); }
+.string\.escape { color: var(--color-string-escape); }
+.string\.escape\.invalid { color: var(--color-string-escape-invalid); }
+
+.number, .number\.float, .number\.hex, .number\.octal, .number\.binary {
+    color: var(--color-number);
+}
+
+.regexp, .regexp\.escape, .regexp\.escape\.control { color: var(--color-regexp); }
+.regexp\.escape\.other { color: var(--color-regexp-escape-other); }
+
+.comment, .comment\.doc { color: var(--color-comment); }
+.invalid { color: var(--color-invalid); }
+
+.delimiter { color: var(--color-delimiter); }
+
+.delimiter\.bracket { color: var(--color-bracket-1); }
+.delimiter\.bracket\.level1 { color: var(--color-bracket-1); }
+.delimiter\.bracket\.level2 { color: var(--color-bracket-2); }
+.delimiter\.bracket\.level3 { color: var(--color-bracket-3); }
+.delimiter\.bracket\.level4 { color: var(--color-bracket-4); }
+.delimiter\.bracket\.level5 { color: var(--color-bracket-5); }
+.delimiter\.bracket\.level6 { color: var(--color-bracket-6); }
+
+/* ==========================================================================
+   Token Styles — CSS-Specific
+   ========================================================================== */
+.css-keyword\.at-rule { color: var(--color-css-at-rule); }
+code .css-foreground, .css-selector { color: var(--color-css-selector); }
+
+.constant\.numeric, .css-constant\.numeric,
+.css-number { color: var(--color-css-number); }
+.css-number\.hex { color: var(--color-css-hex); }
+
+.css-attribute\.name { color: var(--color-css-attribute); }
+.css-identifier { color: var(--color-css-identifier); }
+.css-function { color: var(--color-css-function); }
+.css-delimiter\.parenthesis { color: var(--color-delimiter); }
+
+.css-keyword { color: var(--color-css-keyword); }
+.keyword\.pseudo-class, .css-keyword\.pseudo-class { color: var(--color-css-pseudo); }
+.keyword\.pseudo-element { color: var(--color-css-pseudo); }
+
+.token.css-keyword.at-rule.keyframes,
+.token.keyword.at-rule.keyframes { color: var(--color-css-keyframes); }
+
+/* ==========================================================================
+   Token Styles — HTML-Specific
+   ========================================================================== */
+.html-metatag\.content { color: var(--color-html-tag); }
+.html-metatag, .html-tag { color: var(--color-html-tag); }
+
+.html-attribute\.name { color: var(--color-html-attribute-name); }
+.html-attribute\.value { color: var(--color-html-attribute-value); }
+
+.html-delimiter { color: var(--color-html-delimiter); }
+.html-comment, .html-comment\.content { color: var(--color-html-comment); }
+
+/* ==========================================================================
+   Token Styles — Python-Specific
+   ========================================================================== */
+.py-foreground { color: var(--editor-foreground); }
+
+.py-keyword { color: var(--color-py-keyword); }
+.py-identifier { color: var(--color-py-identifier); }
+.py-comment { color: var(--color-py-comment); }
+
+.py-string { color: var(--color-py-string); }
+.py-string.escape { color: var(--color-py-escape); }
+
+.py-number { color: var(--color-py-number); }
+.py-tag { color: var(--color-py-decorator); }
+
+.py-invalid { color: var(--color-py-invalid); }
+.py-keyword\.self { color: var(--color-py-self); }
+.py-constant\.language { color: var(--color-py-constant); }
+
+.py-keyword\.flow,
+.py-keyword\.declaration,
+.py-keyword\.operator { color: var(--color-py-operator); }
+
+.py-type.identifier { color: var(--color-py-type); }
+.py-functionName { color: var(--color-py-function); }
+
+.py-delimiter,
+.py-delimiter.bracket { color: var(--color-bracket-1); }
+.py-delimiter.bracket.level1 { color: var(--color-bracket-1); }
+.py-delimiter.bracket.level2 { color: var(--color-bracket-2); }
+.py-delimiter.bracket.level3 { color: var(--color-bracket-3); }
+.py-delimiter.bracket.level4 { color: var(--color-bracket-4); }
+.py-delimiter.bracket.level5 { color: var(--color-bracket-5); }
+.py-delimiter.bracket.level6 { color: var(--color-bracket-6); }
+
+/* ==========================================================================
+   Token Styles — Markdown HTML Inline
+   ========================================================================== */
+.tag.md-tag,
+.delimiter.md-delimiter { color: var(--color-md-tag); }
+
+.attribute\.name.md-attribute\.name { color: var(--color-md-attribute-name); }
+.attribute\.value.md-attribute\.value { color: var(--color-md-attribute-value); }
+
+.delimiter.md-delimiter,
+.delimiter.md-tag,
+.delimiter.md-attribute\.name,
+.delimiter.md-attribute\.value {
+    color: var(--color-md-delimiter);
+}
+
+.variable.md-variable { color: var(--color-md-variable); }
