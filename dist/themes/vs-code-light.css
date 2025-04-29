@@ -447,3 +447,20 @@ code .css-foreground,
     color: #A31515;
     /* same as .string */
 }
+
+/* ==========================================================================
+   Token Styles — JSON-Specific Overrides
+   ========================================================================== */
+
+.string\.key {
+    color: #001080;
+}
+
+/* String values */
+.string\.value {
+    color: #A31515;
+}
+
+.json-keyword\.constant {
+    color: #0000FF;
+}

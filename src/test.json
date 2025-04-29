@@ -1,0 +1,27 @@
+{
+  // This is a comment
+  "name": "John Doe",
+  "age": 30,
+  "isAdmin": false,
+  "favorites": {
+      "color": "blue",
+      "food": "pizza",
+      "numbers": [1, 2, 3, 42.5]
+  },
+  "address": null,
+  "settings": {
+      "notifications": true,
+      "theme": "dark",
+      "complexNumber": 0x1F4
+  },
+  /* Multi-line
+      comment example */
+  "emptyArray": [],
+  "nestedObject": {
+      "a": {
+      "b": {
+          "c": "deep"
+      }
+      }
+  }
+  }

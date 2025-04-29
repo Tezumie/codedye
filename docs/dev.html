@@ -389,6 +389,7 @@
                         <button class="tab" data-lang="css">CSS</button>
                         <button class="tab" data-lang="py">Python</button>
                         <button class="tab" data-lang="md">Markdown</button>
+                        <button class="tab" data-lang="json">JSON</button>
                     </div>
                     <div class="playground">
                         <div class="editor-container">
@@ -654,6 +655,43 @@ That’s it — happy testing!
                   
 </code></pre>
                 </div>
+
+                <div class="doc-section" id="static-json">
+                    <h3>JSON</h3>
+                    <pre><code class="language-json">
+{
+    "name": "John Doe",
+    "age": 30,
+    "isAdmin": false,
+    "favorites": {
+        "color": "blue",
+        "food": "pizza",
+        "numbers": [
+        1,
+        2,
+        3,
+        42.5
+        ]
+    },
+    "address": null,
+    "settings": {
+        "notifications": true,
+        "theme": "dark",
+        "complexNumber": 500
+    },
+    "emptyArray": [],
+    "nestedObject": {
+        "a": {
+        "b": {
+            "c": "deep"
+            }
+        }
+    }
+}
+</code></pre>
+                </div>
+
+
             </section>
 
         </div>
@@ -687,7 +725,8 @@ That’s it — happy testing!
             css: document.querySelector('#static-css code').textContent.trim(),
             js: document.querySelector('#static-js code').textContent.trim(),
             py: document.querySelector('#static-py code').textContent.trim(),
-            md: document.querySelector('#static-md code').textContent.trim()
+            md: document.querySelector('#static-md code').textContent.trim(),
+            json: document.querySelector('#static-json code').textContent.trim()
         };
 
         // Function to activate a tab
@@ -733,7 +772,7 @@ That’s it — happy testing!
 
         // Initialize with JavaScript example
         window.addEventListener('DOMContentLoaded', () => {
-            activateTab('css');
+            activateTab('json');
             CodeDye.highlight();
         });
     </script>

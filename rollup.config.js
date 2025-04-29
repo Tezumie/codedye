@@ -29,10 +29,11 @@ const make = (input, out) => ({
 });
 
 export default [
-  make('src/languages/md.js',  'codedye.md.umd.js'),
-  make('src/languages/py.js',  'codedye.py.umd.js'),
-  make('src/languages/js.js',   'codedye.js.umd.js'),
-  make('src/languages/css.js',  'codedye.css.umd.js'),
+  make('src/languages/json.js', 'codedye.json.umd.js'),
+  make('src/languages/md.js', 'codedye.md.umd.js'),
+  make('src/languages/py.js', 'codedye.py.umd.js'),
+  make('src/languages/js.js', 'codedye.js.umd.js'),
+  make('src/languages/css.js', 'codedye.css.umd.js'),
   make('src/languages/html.js', 'codedye.html.umd.js'),
-  make('virtual:all-langs',     'codedye.all.umd.js') // 🪄 Dynamic full build
+  make('virtual:all-langs', 'codedye.all.umd.js') // 🪄 Dynamic full build
 ];

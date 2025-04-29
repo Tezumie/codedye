@@ -339,3 +339,20 @@ code .css-foreground,
 .variable.md-variable {
     color: #61aeee;
 }
+
+/* ==========================================================================
+   Token Styles — JSON-Specific Overrides
+   ========================================================================== */
+
+.string\.key {
+    color: #abb2bf;
+}
+
+/* String values */
+.string\.value {
+    color: #98c379;
+}
+
+.json-keyword\.constant {
+    color: #c678dd;
+}

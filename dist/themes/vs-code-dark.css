@@ -411,3 +411,20 @@ code .css-foreground,
 .variable.md-variable {
     color: #ce9178;
 }
+
+/* ==========================================================================
+   Token Styles — JSON-Specific Overrides
+   ========================================================================== */
+
+.string\.key {
+    color: #9cdcfe;
+}
+
+/* String values */
+.string\.value {
+    color: #ce9178;
+}
+
+.json-keyword\.constant {
+    color: #569cd6;
+}

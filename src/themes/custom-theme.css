@@ -214,3 +214,9 @@ code .css-foreground, .css-selector { color: var(--color-css-selector); }
 }
 
 .variable.md-variable { color: var(--color-md-variable); }
+/* ==========================================================================
+   Token Styles — JSON-Specific
+   ========================================================================== */
+.string\.key {color: var(--color-identifier);}
+.string\.value {color: var(--color-string);}
+.json-keyword\.constant{color: var(--color-keyword);}
