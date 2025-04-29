@@ -122,6 +122,7 @@ You can inject this HTML anywhere in your DOM.
 - ✅ CSS (`css`)
 - ✅ Python (`py`)
 - ✅ Markdown (`md`)
+- ✅ JSON (`json`)
 
 > Add your own by extending `src/languages/`.
 
@@ -174,15 +175,21 @@ without digging through hundreds of lines of styles.
 
 ---
 
-## 🔍 Monaco Tokenizer Compatibility
+## 🔍 Monarch-Style Tokenizer (Monaco/VS Code vs. CodeDye)
 
-CodeDye is built using the Monaco Editor’s Monarch tokenizer system, offering:
+Monaco Editor (and by extension VS Code) ships with a powerful, TypeScript-based Monarch tokenizer and a rich ecosystem of TextMate grammars—ideal for large IDEs but sometimes heavy for smaller projects.  
 
-- ✅ Familiar rule syntax
-- 🔁 Easy reuse of existing grammars
-- 🔧 Extendability for custom languages
+**CodeDye’s approach**  
+- 📝 **Pure JavaScript** — no TypeScript, no external dependencies  
+- 🔍 **Monarch-inspired rules** — you write the same familiar `tokenizer` object, but in plain JS  
+- ⚙️ **Runtime-friendly** — small footprint that runs in any browser or Node environment  
+- 🔄 **Drop-in compatibility** — many existing Monarch grammars “just work” with minor tweaks  
+- ✨ **Easily extendable** — add or override language rules quick and easy
 
-> Thanks to the Monaco team for making this tokenizer system open-source!
+> **Why this matters:**  
+> - If you just need syntax highlighting in a widget or small site, CodeDye loads in a tiny script.  
+> - You get the expressiveness of Monarch’s rule syntax without pulling in the entire Monaco editor.  
+> - A nice balance of familiarity (Monarch grammar) and simplicity (plain JS runtime).
 
 ---
 
