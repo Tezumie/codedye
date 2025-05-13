@@ -80,7 +80,7 @@ export function getJsRules() {
 
             // Brackets and delimiters
             [/[()\[\]]/, 'delimiter.bracket'],
-            [/[<>](?!@symbols)/, 'delimiter.bracket'],
+            [/[<>](?!@symbols)/, 'delimiter'],
             [/@symbols/, {
                cases: {
                   '@operators': 'delimiter',
